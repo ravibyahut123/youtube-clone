@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" name="name" id="name">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        const username = document.getElementById('name')
+
+        const form = document.getElementById("form");
+        form.addEventListener('submit', onSubmit);
+        function onSubmit(){
+            if(username.value.length < 3) {
+                alert('username is too small')
+            } else if(username.value.length > 10) {
+                alert("Username is too long")
+        } else {
+            let str = username.value;
+            for(let i=0; i< str.length; i++) {
+                if(str[i] < '0'|| str[i]> '9') {
+                    alert('only numbers are allowed');
+                    break;
+                }
+            }
+        }
+
+    }
+    </script>
+</body>
+</html>
+
